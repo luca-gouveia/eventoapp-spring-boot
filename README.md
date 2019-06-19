@@ -20,7 +20,7 @@ Acesse o esse link: http://localhost:8080/
 ## Imagens do Sistema
 
 ### Página de início
-![enter image description here](https://raw.githubusercontent.com/luca-gouveia/agenda-spring-boot/master/images/inicio.png)
+![enter image description here](https://raw.githubusercontent.com/luca-gouveia/eventosapp-spring-boot/master/images/inicio.png)
 
 ### Página de adicionar contato
-![enter image description here](https://raw.githubusercontent.com/luca-gouveia/agenda-spring-boot/master/images/add.png)
+![enter image description here](https://raw.githubusercontent.com/luca-gouveia/eventosapp-spring-boot/master/images/cadastro.png)
