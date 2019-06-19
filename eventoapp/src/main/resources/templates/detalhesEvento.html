@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>EventoApp | Detalhes Evento</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        ::placeholder, input { color: #5a5a5aaa; }
+    </style>
+</head>
+<body style="text-align: center; background: rgb(6,208,119);background: linear-gradient(90deg, rgba(6,208,119,1) 0%, rgba(6,208,170,1) 67%);">
+    <h1 style="color: white; ">Detalhes</h1>
+
+    <a style="background: #156EA7" href="/eventos" class="waves-effect waves-light btn">
+        <i class="material-icons left">filter_list</i>
+        Eventos
+    </a>
+    <br>
+    <br>
+    <span style="background: tomato; color: white;" th:text="${error}"></span>
+    <span style="background: greenyellow; color: black;" th:text="${sucess}"></span>
+
+
+    <div th:each="evento : ${evento}">
+        <div style="width: 70%;text-align: center; background: #f9f9f9; padding: 1em;
+                 border: 1px solid darkgray; box-shadow: 0 0 5px 1px #ccc;; margin: 1em auto;" class="row">
+            <p><b>Nome: </b><span th:text="${evento.nome}"></span></p>
+            <p><b>Local: </b><span th:text="${evento.local}"></span></p>
+            <p><b>Data: </b> <span th:text="${evento.data}"></span></p>
+            <p><b>Horário: </b><span th:text="${evento.horario}"></span></p>
+
+        </div>
+    </div>
+
+    <div class="container" style="margin-top:3em;background: white; padding: 2em;border: 1px solid darkgray;box-shadow: 0 0 5px 1px #ccc;">
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header"><i class="material-icons">person_add</i>Adicionar Convidado</div>
+                <div class="collapsible-body">
+                    <form method="POST">
+                        <input type="text" value="" name="nome" placeholder="Nome">
+                        <input type="text" value="" name="cpf" pattern=".{11,11}" title="11 dígitos" maxlength="11" placeholder="CPF">
+                        <br>
+                        <br>
+                        <button class="waves-effect waves-light btn" type="submit" id="btn">Adiconar Convidado</button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="container" style="margin:3em auto;background: #f9f9f9; padding: 2em;border: 1px solid darkgray;box-shadow: 0 0 5px 1px #ccc;">
+        <h5>Convidados</h5>
+        <table>
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Deletar</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each = "convidado : ${convidados}">
+                <td><span th:text="${convidado.nome}"></span></td>
+                <td><span th:text="${convidado.cpf}"></span></td>
+                <td>
+                    <a th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.cpf)).build()}">
+                        <i style="margin-left: 0.4em;" class="material-icons left">delete</i>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.collapsible').collapsible();
+        });
+    </script>
+</body>
+</html>
