@@ -22,5 +22,5 @@ Acesse o esse link: http://localhost:8080/
 ### Página de início
 ![enter image description here](https://raw.githubusercontent.com/luca-gouveia/eventosapp-spring-boot/master/images/inicio.png)
 
-### Página de adicionar contato
+### Página de adicionar evento
 ![enter image description here](https://raw.githubusercontent.com/luca-gouveia/eventosapp-spring-boot/master/images/cadastro.png)
