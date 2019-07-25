@@ -16,7 +16,7 @@ Após instalado, dentro do diretório do projeto execute o seguinte comando:
 
    `$ mvn spring-boot:run`
    
-Acesse o esse link: http://localhost:8080/
+Acesse o link: http://localhost:8080/
 ## Imagens do Sistema
 
 ### Página de início
